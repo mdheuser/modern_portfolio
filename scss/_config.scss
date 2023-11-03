@@ -1,0 +1,41 @@
+// This file is only for the variables.
+// It was created to keep the main scss file cleaner
+// It functions by importing it into main on the first line:
+// @import 'config';
+
+// These are variables
+$primary-color: #444;
+$secondary-color: #eece1a;
+$show-home-image: true;
+$home-image: url(../img/background.jpg);
+$background-opacity: 0.9;
+
+// Mixins are used on scss files. 
+// @mixin and @include makes it easy to re-use CHUNKS OF STYLES.
+
+// transition for links on social media icons on hover
+@mixin easeOut {
+    transition: all 1.5s ease-out;
+}
+
+@mixin background {
+    @if $show-home-image {
+        &#bg-img {
+            background: $home-image;
+            background-attachment: fixed;
+            background-size: cover;
+            
+            
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                background: rgba($primary-color, $background-opacity);
+            }
+        }
+    }
+}
