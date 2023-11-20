@@ -1,6 +1,6 @@
 // This file is only for the variables.
 // It was created to keep the main scss file cleaner
-// It functions by importing it into main on the first line:
+// It functions by importing it into "main.scss" on the first line:
 // @import 'config';
 
 // These are variables
@@ -37,6 +37,15 @@ $background-opacity: 0.9;
                 background: rgba($primary-color, $background-opacity);
             }
         }
+    }
+}
+
+// Set text colour
+@function set-text-color($color) {
+    @if (lightness($color)) > 40 {
+        @return #000;
+    } @else {
+        @return #fff;
     }
 }
 
