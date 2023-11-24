@@ -15,7 +15,7 @@ $background-opacity: 0.9;
 
 // transition for links on social media icons on hover
 @mixin easeOut {
-    transition: all 1.5s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 @mixin background {
