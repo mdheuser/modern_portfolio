@@ -4,11 +4,8 @@
 // @import 'config';
 
 // These are variables
-$primary-color: #444;
-$secondary-color: #eece1a;
-$show-home-image: true;
-$home-image: url(../img/background.jpg);
-$background-opacity: 0.9;
+$primary-color: #f2f2f2;
+$secondary-color: #222222;
 
 // Mixins are used on scss files. 
 // @mixin and @include makes it easy to re-use CHUNKS OF STYLES.
@@ -18,34 +15,13 @@ $background-opacity: 0.9;
     transition: all 0.5s ease-out;
 }
 
-@mixin background {
-    @if $show-home-image {
-        &#bg-img {
-            background: $home-image;
-            background-attachment: fixed;
-            background-size: cover;
-            
-            
-            &:after {
-                content: '';
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                background: rgba($primary-color, $background-opacity);
-            }
-        }
-    }
-}
 
 // Set text colour
 @function set-text-color($color) {
     @if (lightness($color)) > 40 {
-        @return #000;
+        @return #222222;
     } @else {
-        @return #fff;
+        @return #f2f2f2;
     }
 }
 

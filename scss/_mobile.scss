@@ -22,40 +22,24 @@
             margin-bottom: 1rem;
         }
     } 
-
-    ul.menu-nav,
-    div.menu-branding {
+/*
+    ul.menu-nav {
         float: none;
-        width: 100%;
+        width: 50%;
         min-height: 0;
 
         &.show {
-            transform: translate3d(0,0,0);
+            transform: translate3d(0,0,-100%);
         }
     }
 
     .menu-nav {
-        height: 75vh;
-        transform: translate3d(-100%,0,0);
-        font-size: 15px;
+        height: 100%;
+        transform: translate3d(0,-100%,0);
+        font-size: 10px;
 
     }
-
-    .menu-branding {
-        height: 25vh;
-        transform: translate3d(100%,0,0);
-
-        .portrait {
-            background: url
-            ('../img/portrait_small.jpg');
-            /*my browser is not going beyond
-            a certain size, so the picture size 
-            is not changing. */
-            width: 150px;
-            height: 150px;
-        }
-
-    }
+*/
     .about-info {
         grid-template-areas: 
             'bioimage'
@@ -79,5 +63,32 @@
     .projects {
         grid-template-columns: 1fr;
     }
-}
+    .menu-btn {
+        position: fixed;
+        z-index: 3;
+        right: 32px;
+        top: 95%;
+        cursor: pointer;
+        transition: all 0.5s ease-out;
+    }
 
+    .darkmode {    
+        position: absolute;
+        z-index: -1;
+        right: 10px;
+        top: 32px;
+        display: inline;
+        font-size: 3rem;
+        width: 60px;
+        cursor: pointer; // When hovering
+    }
+
+    .menu-nav {
+        transform: translate3d(0, 100%, 0);
+        .menu-nav.show {
+          transform: translate3d(0, 0, 0); }
+      .menu .nav-item {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+}

@@ -7,7 +7,6 @@
 } 
 
 body {
-    @include background;
     background: $primary-color;
     color: set-text-color($primary-color);
     height: 100%;
@@ -16,13 +15,23 @@ body {
     line-height: 1.5;
 }
 
+// For dark mode
+
+.dark-mode {
+    background-color: #181818;
+    color: #ededed;
+  }
+
+
+
+
 // Headings / lg heading refers to H1 because it is specified as CLASS on the html file
 
 h1, h2, h3 {
     margin:0;
     font-weight: 400;
     &.lg-heading {
-        font-size: 5rem;
+        font-size: 2.5rem;
     }
 
     &.sm-heading {
@@ -33,7 +42,7 @@ h1, h2, h3 {
 }
 
 a {
-    color: #fff; 
+    color: #818181; 
     text-decoration: none;
 } 
 
@@ -44,7 +53,7 @@ header {
 }
 
 .text-secondary {
-    color: $secondary-color;
+    color: #818181;
 }
 
 main {
@@ -57,7 +66,7 @@ main {
             padding: 0.4rem;
 
             &:hover {
-                color: $secondary-color;
+                color: #992525;
                 @include easeOut();
             }
         }
@@ -84,12 +93,12 @@ main {
     grid-area: bioimage;
     margin: auto;
     border-radius: 50%;
-    border: $secondary-color 3px solid;
+    border: #818181 3px solid;
 }
 
 .bio {
     grid-area:bio;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .job-1 {
@@ -105,7 +114,7 @@ main {
 }
 
 .job {
-    background: lighten($primary-color, 5);
+    background: lighten(#808080, 5);
     padding: 0.5rem;
     border-bottom: $secondary-color 5px solid;
 }
@@ -118,7 +127,7 @@ main {
 
     img { 
         width: 100%;
-        border: 3px #fff solid;
+        border: 3px #7b7b7b solid;
 
         &:hover {
             opacity: 0.5;
@@ -145,7 +154,7 @@ main {
 
         &:hover {
             padding: 0.5rem 1.5rem;
-            background: $secondary-color;
+            background: #992525;
             color: set-text-color($secondary-color);
             span {
                 color: set-text-color($secondary-color);
@@ -157,11 +166,11 @@ main {
 // Button styles
     .btn {
         display: block;
-        padding: 0.5rem 1rem;
+        padding: 0.3rem 0.3rem;
         border: 0;
         margin-bottom: 0.3rem;
         &:hover {
-            background: $secondary-color;
+            background: #992525;
             color: set-text-color($secondary-color);
         } 
     }

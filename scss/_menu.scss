@@ -2,6 +2,8 @@
 
 //Class:
 
+
+
 .menu-btn {
     // z-index means it is close to the front.
     // Absolute means the button is removed from the normal
@@ -13,12 +15,11 @@
     cursor: pointer; // When hovering
     @include easeOut; // For the transition
 
-    // I don't know what this is:
     .btn-line {
         width: 28px;
         height: 3px;
         margin: 0 0 5px 0;
-        background: set-text-color($primary-color);
+        background: #808080;
         @include easeOut;
     }
 
@@ -58,14 +59,14 @@
         visibility: visible;
     }
 
-    &-branding,
+    //&-branding,
     &-nav {
         display: flex;
         flex-flow: column wrap;
         align-items: center;
         justify-content: center;
-        float: left;
-        width: 50%;
+        float: right;
+        width: 40%;
         height: 100vh;
         overflow: hidden; // to avoid scrollbars
     }
@@ -84,28 +85,8 @@
         }
     }
 
-    // Branding side
-    &-branding {
-        background: $primary-color;
-        transform: translate3d(0, 100%, 0);
-        @include easeOut;
-        
-        &.show {
-            // Slide in from bottom
-            transform: translate3d(0, 0, 0);
-        }
-    
-        .portrait {
-            width: 250px;
-            height: 250px;
-            background: url('../img/portrait.jpg');
-            border-radius: 28%; // 50% turns photo into a circle
-            border: solid 3px $secondary-color;
-        }
-    }
-
     .nav-item {
-        transform: translate3d(30px, 0, 0);
+        transform: translate3d(0, 0, 0);
         @include easeOut;
         
         &.show {
@@ -113,30 +94,45 @@
         }
 
         &.current > a {
-            color: $secondary-color;
+            color: #d90f0f;
         }
     }
 
     .nav-link {
         display: inline block;
         position: relative;
-        font-size: 20px;
+        font-size: 15px;
         text-transform: uppercase;
         padding: 1rem 0;
         font-weight: 300;
         color: set-text-color($primary-color);
         text-decoration: none;
-        @include easeOut;
 
         &:hover {
-            color: $secondary-color;
+            color: #d90f0f;
         }
     }
 }
 
-// Delay each nav item by 0.1s -- This is NOT working (video 4 at 15min)
+// Delay each nav item by 0.1s
 @for $x from 1 through 4 {
     .nav-item:nth-child(#{$x}) {
-        transition-delay: $x * 0.1s;
+        transition-delay: $x * 0.01s;
     }
 }
+
+//position of dark mode toggle button
+ // z-index means it is close to the front.
+    // Absolute means the button is removed from the normal
+    // document flow
+
+    .darkmode {    
+        position: absolute;
+        z-index: -1;
+        right: 60px;
+        top: 32px;
+        display: inline;
+        font-size: 3rem;
+        width: 60px;
+        cursor: pointer; // When hovering
+    }
